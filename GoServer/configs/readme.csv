@@ -1,0 +1,15 @@
+### stop background postgres first, otherwise you cannot connect to db in docker
+
+#DB container set up
+docker run --name urldb -e POSTGRES_PASSWORD=0000 -p 5432:5432 -d postgres
+
+# create db user and password
+docker exec -ti urldb bash
+psql -U postgres
+create role urluser with login password '0000' createdb;
+create database urlserver with owner urluser;
+
+\l # to see all db in postgres
+\du # to see all user
+\c 'dbname' #connect to db
+\dt # show all the tables
