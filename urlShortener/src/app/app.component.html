@@ -1,11 +1,4 @@
 
-<h1>{{title}}</h1>
-<input type="text" [(ngModel)]="originalUrl" placeholder="Enter URL here" style="width: 70%;">
-<button (click)="generateShortUrl()">Shorten URL</button>
-<!-- Conditionally display result as a hyperlink -->
-<div *ngIf="result.startsWith('http'); else textResult">
-  <a href="{{ reverseUrl }}" target="_blank">{{ result }}</a>
-</div>
-<ng-template #textResult>{{ result }}</ng-template>
-
-<router-outlet></router-outlet>
+<app-navbar/>
+<h2>{{title}}</h2>
+<router-outlet />

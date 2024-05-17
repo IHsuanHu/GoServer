@@ -1,0 +1,7 @@
+<p>original-url works!</p>
+<input type="text" [(ngModel)]="originalUrl" placeholder="Enter URL here" style="width: 70%;">
+<button (click)="generateShortUrl()">Shorten URL</button>
+<div *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</div>
+<div *ngIf="result.startsWith('http')">
+  <a href="{{ restoreUrl }}" target="_blank">{{ result }}</a>
+</div>

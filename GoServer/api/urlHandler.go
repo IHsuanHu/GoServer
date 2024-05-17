@@ -33,5 +33,5 @@ func HandleShortUrlGet(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{"original": originalUrl})
+	c.JSON(http.StatusOK, gin.H{"originalUrl": originalUrl})
 }

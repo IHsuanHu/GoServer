@@ -1,0 +1,9 @@
+<p>short-url works!</p>
+<input type="text" [(ngModel)]="shortUrl" placeholder="Enter short Url here" style="width: 70%;">
+<button (click)="getOriginalUrl()">Restore URL</button>
+
+<div *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</div>
+
+<div *ngIf="originalUrl.startsWith('http')">
+  <a href="{{ originalUrl }}" target="_blank">{{ originalUrl }}</a>
+</div>
