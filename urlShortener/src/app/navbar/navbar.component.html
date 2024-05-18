@@ -1,7 +1,13 @@
-<header>
-    <nav>
-        <a routerLink='/'>Home</a> |
-        <a routerLink='/originalurl'>Url Shorten</a> |
-        <a routerLink='/shorturl'>Url Restore</a>
+<header class="text-gray-400 bg-gray-900 body-font h-[80px]">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+            <img src="https://go.dev/blog/go-brand/Go-Logo/SVG/Go-Logo_Aqua.svg" style="width: 50px; height: auto;" alt="Go Logo">
+            <span class="ml-3 text-xl">Golang Server</span>
+          </a>
+    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        <a routerLink='/' class="mr-5 hover:text-white px-4 py-2 min-w-[100px]">Home</a>
+        <a routerLink='/originalurl' class="mr-5 hover:text-white px-4 py-2 min-w-[100px]">Url Shorten</a>
+        <a routerLink='/shorturl' class="mr-5 hover:text-white px-4 py-2 min-w-[100px]">Url Restore</a>
     </nav>
+    </div>
 </header>

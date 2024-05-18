@@ -61,4 +61,12 @@ export class OriginalUrlComponent {
       '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
     return !!pattern.test(url);
   }
+  copyUrl(url: string) {
+    navigator.clipboard.writeText(url).then(() => {
+      // Notify user that the URL has been copied
+      alert('URL copied to clipboard!');
+    }).catch(err => {
+      console.error('Failed to copy: ', err);
+    });
+  }
 }
