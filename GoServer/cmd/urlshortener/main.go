@@ -10,6 +10,7 @@ import (
 )
 
 func main() {
+	//close db after init
 	defer db.Close()
 
 	router := gin.Default()
@@ -25,6 +26,8 @@ func main() {
 	}
 
 }
+
+// setting CORS Cross-origin resource sharing
 func CORSMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")

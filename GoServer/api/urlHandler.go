@@ -7,6 +7,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// Post method
+// Receieve body from frontend
 func HandleOriginalUrlPost(c *gin.Context) {
 	var req struct {
 		OriginalUrl string `json:"originalUrl"`
@@ -25,6 +27,8 @@ func HandleOriginalUrlPost(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"shortUrl": shortUrl})
 }
 
+// Get method
+// Receieve hashed param from frontend then return original url
 func HandleShortUrlGet(c *gin.Context) {
 	shortUrl := c.Param("shortUrl")
 	originalUrl, err := db.FindOriginalUrl(shortUrl)

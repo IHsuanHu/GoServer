@@ -25,6 +25,7 @@ type Url struct {
 
 var db *sql.DB
 
+// connect to database with specific user
 func init() {
 	var err error
 	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
@@ -67,6 +68,7 @@ func Close() {
 	}
 }
 
+// Create new data to database
 func GenerateUrl(originalUrl string) (string, error) {
 	existingShortUrl, err := FindShortUrl(originalUrl)
 	if existingShortUrl != "" && err == nil {
@@ -92,6 +94,7 @@ func GenerateUrl(originalUrl string) (string, error) {
 	return shortUrl, nil
 }
 
+// giving a hash value then return original url
 func FindShortUrl(originalUrl string) (string, error) {
 	query := `select short_url from url where original_url = $1`
 	var Shorturl string
@@ -104,6 +107,7 @@ func FindShortUrl(originalUrl string) (string, error) {
 	return Shorturl, nil
 }
 
+// check the original url to reduce duplicate
 func FindOriginalUrl(shortUrl string) (string, error) {
 	query := `select original_url from url where short_url = $1`
 	var originalUrl string

@@ -7,6 +7,7 @@ import (
 
 const base62 = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
+// Generate hash value
 func GenerateBase62(n int) string {
 	rand.Seed(time.Now().UnixNano())
 	b := make([]byte, n)
