@@ -15,11 +15,14 @@ func main() {
 
 	router := gin.Default()
 	router.Use(CORSMiddleware())
+	// setting all the route here
+	// using gin framework here to deal with all the http api and route
 	router.GET("/", func(c *gin.Context) {
 		c.String(http.StatusOK, "From Go server")
 	})
 	router.POST("/originalUrl", api.HandleOriginalUrlPost)
 	router.GET("/shortUrl/:shortUrl", api.HandleShortUrlGet)
+	// start with port 8080
 	log.Println("Starting server on port :8080...")
 	if err := router.Run("localhost:8080"); err != nil {
 		log.Fatal("Falied to run server: ", err)
