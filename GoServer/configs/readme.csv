@@ -13,3 +13,9 @@ create database urlserver with owner urluser;
 \du # to see all user
 \c 'dbname' #connect to db
 \dt # show all the tables
+
+
+### go application containerize
+1. in db.go change "host" variable from "localhost" to "host.docker.internal"
+2. in root folder, run 
+        docker run -p 8080:8080 --name goserver goserver
