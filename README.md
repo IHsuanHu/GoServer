@@ -13,3 +13,6 @@ For data management, the application integrates PostgreSQL, a powerful and open-
 Containerization is further extended to the Go application, employing Docker to encapsulate the application environment. This method guarantees that the application performs reliably across different systems, addressing the common challenge of "it works on my machine." Docker facilitates scaling the application and streamlines deployment across various stages from development to production.
 
 This architecture not only supports efficient development cycles but also integrates modern DevOps practices, enabling continuous integration and continuous deployment (CI/CD) processes. The combination of Golang, Angular, PostgreSQL, and Docker creates a potent mix of technologies that are well-suited for developing high-performance, scalable applications in a containerized setup.
+
+see more instruction for [go server](https://github.com/IHsuanHu/URL-Shortener/tree/master/GoServer/configs)
+and [Angular 17](https://github.com/IHsuanHu/URL-Shortener/tree/master/urlShortener)
