@@ -1,8 +1,8 @@
 <div align="center">
-    <h2>Url shortener</h2>
+    <h1>Url shortener</h1>
 </div>
 
-## Project Overview
+### Project Overview
 
 This project is a comprehensive full-stack web application that utilizes Golang as the backend, Angular 17 as the frontend, and PostgreSQL for database management, providing a robust, scalable, and efficient solution for modern web development. The backend, implemented in Go, delivers a high-performance API that efficiently handles requests and manages data interactions. It capitalizes on Go's strong support for concurrency and high throughput, which is essential for processing large volumes of requests swiftly.
 
