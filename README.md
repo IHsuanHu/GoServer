@@ -14,5 +14,5 @@ Containerization is further extended to the Go application, employing Docker to 
 
 This architecture not only supports efficient development cycles but also integrates modern DevOps practices, enabling continuous integration and continuous deployment (CI/CD) processes. The combination of Golang, Angular, PostgreSQL, and Docker creates a potent mix of technologies that are well-suited for developing high-performance, scalable applications in a containerized setup.
 
-see more instruction for [go server](https://github.com/IHsuanHu/URL-Shortener/tree/master/GoServer/configs)
+see more instruction for [Go server](https://github.com/IHsuanHu/URL-Shortener/tree/master/GoServer/configs)
 and [Angular 17](https://github.com/IHsuanHu/URL-Shortener/tree/master/urlShortener)
