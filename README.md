@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>Url shortener</h1>
+    <h1>Url Shortener</h1>
 </div>
 
 ### Project Overview
