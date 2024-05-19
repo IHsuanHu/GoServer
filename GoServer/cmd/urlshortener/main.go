@@ -24,8 +24,8 @@ func main() {
 	router.GET("/shortUrl/:shortUrl", api.HandleShortUrlGet)
 	// start with port 8080
 	log.Println("Starting server on port :8080...")
-	if err := router.Run("localhost:8080"); err != nil {
-		log.Fatal("Falied to run server: ", err)
+	if err := router.Run(":8080"); err != nil {
+		log.Fatal("Failed to run server: ", err)
 	}
 
 }
