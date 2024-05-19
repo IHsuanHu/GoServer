@@ -1,0 +1,14 @@
+### install "REST Client" extensions in VS Code in order to run the test
+
+@host = http://localhost:8080
+
+### Request to shorten a URL
+POST {{host}}/originalUrl
+Content-Type: application/json
+
+{
+  "originalUrl": "https://www.google.com"
+}
+
+### Retrieve original URL using short URL key
+GET {{host}}/shortUrl/EL7vvQa

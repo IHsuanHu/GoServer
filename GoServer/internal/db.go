@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	host     = "host.docker.internal" //"localhost"
+	host     = "localhost" //"host.docker.internal" //
 	port     = 5432
 	user     = "urluser"
 	password = "0000"
