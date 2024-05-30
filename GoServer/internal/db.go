@@ -11,10 +11,10 @@ import (
 )
 
 const (
-	host     = "host.docker.internal" //"localhost"
+	host     = "dpg-cpbl3vvsc6pc73abnivg-a.oregon-postgres.render.com" //"host.docker.internal" //"localhost"
 	port     = 5432
 	user     = "urluser"
-	password = "0000"
+	password = "2jnwqMPPFzMqkRAHHSfJhgokHKR0LWiV" //"0000"
 	dbname   = "urlserver"
 )
 
@@ -28,7 +28,8 @@ var db *sql.DB
 // connect to database with specific user
 func init() {
 	var err error
-	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
+	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=require", host, port, user, password, dbname)
+	// psqlInfo := "postgres://urluser:2jnwqMPPFzMqkRAHHSfJhgokHKR0LWiV@dpg-cpbl3vvsc6pc73abnivg-a.oregon-postgres.render.com/urlserver"
 	db, err = sql.Open("postgres", psqlInfo)
 	if err != nil {
 		log.Fatalf("Error opening database: %v", err)
