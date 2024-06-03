@@ -24,7 +24,7 @@ export class OriginalUrlComponent {
       if (this.isValidUrl(this.originalUrl)){
         this.urlShortenerService.generateShortUrl(this.originalUrl).subscribe({
           next: (data) => {
-            this.result = "http://0.0.0.0:8080/shortUrl/"+ data.shortUrl;
+            this.result = "http://localhost:8080/shortUrl/"+ data.shortUrl;
             this.getOriginalUrl(this.result);
           },
           error: (error) => {

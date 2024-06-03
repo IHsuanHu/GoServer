@@ -13,9 +13,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/url-shortener",
+            "outputPath": "../GoServer/dist/",
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "deployUrl": "home/",
             "polyfills": [
               "zone.js"
             ],

@@ -20,7 +20,7 @@ export class ShortUrlComponent {
   getOriginalUrl(): void{
 
     this.errorMessage = '';
-    const prefix = 'http://0.0.0.0:8080/shortUrl/';
+    const prefix = 'http://localhost:8080/shortUrl/';
     if (!this.shortUrl.startsWith(prefix) || this.shortUrl.slice(prefix.length).length !== 7) {
       this.errorMessage = 'Invalid URL or hash length. Please check your input.';
       return;  

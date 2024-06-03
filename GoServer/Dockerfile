@@ -6,7 +6,7 @@ FROM golang:1.22.2 AS builder
 WORKDIR /app
 
 # Copy local code to the container image.
-COPY GoServer/ .
+COPY . .
 
 # Retrieve application dependencies using go mod.
 RUN go mod download
@@ -24,20 +24,8 @@ WORKDIR /app
 # Copy the binary to the production image from the builder stage.
 COPY --from=builder /app/bin /app/bin
 
+# Copy static files to the production image
+COPY --from=builder /app/dist /app/dist
+
 # Run the web service on container startup.
 ENTRYPOINT ["/app/bin/goserver"]
-
-# # 构建 Go 后端
-# FROM golang:1.22.2 AS build-backend
-# WORKDIR /app
-# COPY GoServer/go.mod GoServer/go.sum ./
-# RUN go mod download
-# COPY GoServer/ .  
-# WORKDIR /app/cmd/urlshortener  
-# RUN go build -o /main .
-
-# # 创建最终镜像
-# FROM alpine:latest
-# WORKDIR /app
-# COPY --from=build-backend /main /usr/bin/main
-# CMD ["/usr/bin/main"]
