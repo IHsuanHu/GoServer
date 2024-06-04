@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { UrlShortenerService } from '../url-shortener.service';
 import { CommonModule } from '@angular/common';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-original-url',
@@ -24,7 +25,7 @@ export class OriginalUrlComponent {
       if (this.isValidUrl(this.originalUrl)){
         this.urlShortenerService.generateShortUrl(this.originalUrl).subscribe({
           next: (data) => {
-            this.result = "http://localhost:8080/shortUrl/"+ data.shortUrl;
+            this.result = `${environment.apiUrl}/shortUrl/${data.shortUrl}`;
             this.getOriginalUrl(this.result);
           },
           error: (error) => {

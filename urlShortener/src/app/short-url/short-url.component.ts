@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { UrlShortenerService } from '../url-shortener.service';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-short-url',
@@ -20,7 +21,7 @@ export class ShortUrlComponent {
   getOriginalUrl(): void{
 
     this.errorMessage = '';
-    const prefix = 'http://localhost:8080/shortUrl/';
+    const prefix = `${environment.apiUrl}/shortUrl/`;
     if (!this.shortUrl.startsWith(prefix) || this.shortUrl.slice(prefix.length).length !== 7) {
       this.errorMessage = 'Invalid URL or hash length. Please check your input.';
       return;  
