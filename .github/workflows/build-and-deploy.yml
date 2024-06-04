@@ -45,3 +45,10 @@ jobs:
 
     - name: Post action clean up
       run: docker logout
+
+    - name: Deploy to Render
+      if: github.ref == 'refs/heads/master'
+      env:
+        deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+      run: |
+        curl "$deploy_url"
