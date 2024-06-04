@@ -4,32 +4,25 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
+	"os"
 	"urlshortener/internal/util"
 
 	"github.com/lib/pq"
 	_ "github.com/lib/pq"
 )
 
-const (
-	host     = "dpg-cpbl3vvsc6pc73abnivg-a.oregon-postgres.render.com" //"host.docker.internal" //"localhost"
-	port     = 5432
-	user     = "urluser"
-	password = "2jnwqMPPFzMqkRAHHSfJhgokHKR0LWiV" //"0000"
-	dbname   = "urlserver"
-)
-
-type Url struct {
-	ShortUrl    string
-	OriginalUrl string
-}
-
 var db *sql.DB
 
 // connect to database with specific user
 func init() {
 	var err error
+	host := os.Getenv("DB_HOST")
+	port := os.Getenv("DB_PORT")
+	user := os.Getenv("DB_USER")
+	password := os.Getenv("DB_PASSWORD")
+	dbname := os.Getenv("DB_NAME")
+
 	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=require", host, port, user, password, dbname)
-	// psqlInfo := "postgres://urluser:2jnwqMPPFzMqkRAHHSfJhgokHKR0LWiV@dpg-cpbl3vvsc6pc73abnivg-a.oregon-postgres.render.com/urlserver"
 	db, err = sql.Open("postgres", psqlInfo)
 	if err != nil {
 		log.Fatalf("Error opening database: %v", err)
